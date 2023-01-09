@@ -1,0 +1,37 @@
+buildscript {
+    ext.kotlin_version = '1.6.10'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://artifactory.img.ly/artifactory/imgly" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'ly.img.android.sdk:plugin:10.5.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+        // [required] camera_deep_ar
+            url "${project(':camera_deep_ar').projectDir}/libs"
+        }
+        maven { url 'https://artifactory.img.ly/artifactory/imgly' }
+
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
