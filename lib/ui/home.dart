@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:face_filters/widgets/info_card.dart';
 import 'package:face_filters/ui/cam_masks_filters.dart';
+import 'package:face_filters/ui/CameraView.dart';
+import 'package:image_picker/image_picker.dart';
 
 const url = "meshivanshsingh.me";
 const email = "me.shivansh007@gmail.com";
@@ -63,7 +65,18 @@ class HomePage extends StatelessWidget {
                         builder: (builder) => CameraMasksFilters(
                         )));
               }),
-              InfoCard(text: "Uplaod image", icon: Icons.photo_library, onPressed: () async {}),
+              InfoCard(text: "Uplaod image", icon: Icons.photo_library, onPressed: () async {
+                final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => CameraViewPage(
+                          path:  image!.path
+                          ,
+                        )));
+
+
+              }),
 
 
             ],

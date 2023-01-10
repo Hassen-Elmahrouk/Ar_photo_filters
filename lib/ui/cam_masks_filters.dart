@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 //import 'package:camera/camera.dart';
 import 'package:camera_deep_ar/camera_deep_ar.dart';
 import 'dart:io' as Platform;
-import"package:hovering/hovering.dart";
 import 'package:avatar_view/avatar_view.dart';
 import 'package:flutter/services.dart';
 
@@ -20,7 +19,7 @@ import 'package:face_filters/ui/CameraView.dart';
 DeepArConfig config = const DeepArConfig(
   androidKey:
       'bcb368f087477a1976db628eaf12aac81d8904829e0c60da55b30f1c8974326815d609511e2d0d22',
-  ioskey: 'ioskey',
+  ioskey: '3b9119ba6fe608e97fd89c9f9859b6981e2460c362a564b85504f6bbeabce4301754f3d85e54059a',
   displayMode: DisplayMode.camera,
 );
 
@@ -248,7 +247,7 @@ class _CameraMasksFiltersState extends State<CameraMasksFilters> {
                     Positioned(
                       bottom: 0.0,
                       child: Container(
-                        color: Colors.black,
+                        //color: Colors.black,
                         padding: EdgeInsets.only(top: 5, bottom: 5),
                         width: MediaQuery.of(context).size.width,
                         child: Column(

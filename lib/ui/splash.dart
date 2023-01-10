@@ -1,4 +1,4 @@
- import 'package:face_filters/ui/cam_masks_filters.dart';
+ import 'package:face_filters/ui/home.dart';
  import 'package:flutter/material.dart';
  import 'package:splashscreen/splashscreen.dart';
 
@@ -13,28 +13,28 @@
   @override
    Widget build(BuildContext context) {
      return SplashScreen(
-       image: Image.asset("images/icon.png"),
+       image: Image.asset("assets/sc.jpg"),
        photoSize: 140,
-      loaderColor: Colors.deepPurple,
+      loaderColor: Colors.white,
        loadingText: const Text(
-         "by Praveen Varma",
+         "Loading",
          style: TextStyle(
-           color: Colors.deepPurpleAccent,
+           color: Colors.white,
            fontSize: 16,
           fontFamily: "Brand Bold",
          ),
        ),
-       backgroundColor: Colors.white,
-      seconds: 3,
-       navigateAfterSeconds: const CameraMasksFilters(),
-      title: const Text(
+       backgroundColor: Colors.yellowAccent,
+      seconds: 5,
+       navigateAfterSeconds: const HomePage(),
+      /*title: const Text(
          "AR   Face   Filters",
          style: TextStyle(
            fontSize: 50,
            color: Colors.deepPurpleAccent,
            fontFamily: "Signatra",
-         ),
-       ),
+         ),*/
+
      );
    }
 }
