@@ -15,7 +15,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import '../widgets/error.dart';
 import 'package:face_filters/ui/VideoView.dart';
-import 'package:face_filters/ui/PhotoEditor.dart';
+import 'package:face_filters/ui/CameraView.dart';
 
 DeepArConfig config = const DeepArConfig(
   androidKey:
@@ -169,7 +169,7 @@ class _CameraMasksFiltersState extends State<CameraMasksFilters> {
                               borderWidth: 3,
                               isOnlyText: false,
                               backgroundColor: Colors.pink[400],
-                              imagePath: "assets/${dir}/${p.toString()}.jpg",
+                              imagePath: "assets/${dir}/${p.toString()}.png",
 
                               placeHolder: Text(
                                 "$p",
@@ -310,7 +310,7 @@ class _CameraMasksFiltersState extends State<CameraMasksFilters> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (builder) => Photo_Edit(
+                                            builder: (builder) => CameraViewPage(
                                               path: path,
                                             )));});
 

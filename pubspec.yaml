@@ -42,8 +42,8 @@ dependencies:
 
   path_provider: ^2.0.5
   path:
-  photo_editor_sdk: ^2.7.1
-  gallery_saver: ^2.3.2
+
+
   image_picker: ^0.8.6
 
 
